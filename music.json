@@ -1,0 +1,34 @@
+[
+    {
+        "name": "根本你不懂得爱我",
+        "andio_url": "../res/music/根本你不懂得爱我韦雄.mp3",
+        "singer": "王子恒",
+        "album": "603瘦猫",
+        "cover": "res/picture/IMG_20250420_165105.jpg",
+        "time": "03:56"
+    },
+    {
+        "name": "我爱你红色高跟鞋",
+        "andio_url": "../res/music/红色高跟鞋蔡健雅.mp3",
+        "singer": "蔡健雅",
+        "album": "若你碰到他",
+        "cover": "res/picture/jJOaqlez9x5VofjgB7B_Bw==_109951166195459631.jpg",
+        "time": "03:26"
+    },
+    {
+        "name": "护花使者",
+        "andio_url": "../res/music/护花使者李克勤.mp3",
+        "singer": "李克勤",
+        "album": "雨中街头剧",
+        "cover": "res/picture/63FWrGpyTiXkH4Zne81qeg==_109951167893640977.jpg",
+        "time": "03:15"
+    },
+    {
+        "name": "Hey Jude",
+        "andio_url": "../res/music/Hey JudeThe Beatles.mp3",
+        "singer": "The Beatles",
+        "album": "Love",
+        "cover": "res/picture/5tuyB-sufsI9pCtbLcFMCA==_109951166302571359.jpg",
+        "time": "03:58"
+    }
+]
