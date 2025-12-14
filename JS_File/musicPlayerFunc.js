@@ -64,12 +64,13 @@ function renderMusicList(List) {
 }
 
 function showSpectrum() {
-  clearTimeout(spectrumHideTimer); // 取消之前的隐藏操作
-  const spectrum = document.querySelector('.player-spectrum');
-  spectrum.style.display = 'block';
-  requestAnimationFrame(() => {
-    spectrum.style.opacity = '1';
-    spectrum.style.transform = 'scaleY(1)';
+    //快速点击两次播放按钮后，.player-spectrum（频谱）布局会“消失”的问题
+    clearTimeout(spectrumHideTimer); // 取消之前的隐藏操作
+    const spectrum = document.querySelector('.player-spectrum');
+    spectrum.style.display = 'block';
+    requestAnimationFrame(() => {
+        spectrum.style.opacity = '1';
+        spectrum.style.transform = 'scaleY(1)';
   });
 }
 
@@ -100,7 +101,6 @@ function updatePlayBtnIcons() {
 
 function PlayMusic(triggerElement, forcePlay = false) {
     const audio = document.getElementById('audio-player');
-    const spectrum = document.querySelector('.player-spectrum');
 
     // 正常点击时翻转播放状态；如果是强制播放，就直接设为 true
     playState = forcePlay ? true : !playState;
@@ -194,18 +194,25 @@ document.addEventListener('keydown', function (e) {
 
     switch (e.code) {
         case 'Space': // 空格键：播放 / 暂停
-            e.preventDefault(); // 防止页面滚动
+            e.preventDefault(); 
             PlayMusic(playBtn);
             break;
 
-        case 'ArrowLeft': // ← 键：后退 5 秒
-            audio.currentTime = Math.max(0, audio.currentTime - 5);
+        case 'ArrowLeft': 
+            if (e.ctrlKey || e.metaKey) {
+                document.getElementById('playBack').click();
+            } else {
+                audio.currentTime = Math.max(0, audio.currentTime - 5);
+            }
             break;
 
-        case 'ArrowRight': // → 键：快进 5 秒
-            audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
+        case 'ArrowRight': 
+            if (e.ctrlKey || e.metaKey) {
+                document.getElementById('playNext').click();
+            } else {
+                audio.currentTime = Math.min(audio.duration, audio.currentTime + 5);
+            }
             break;
-
         case 'Escape': // Esc 键：关闭播放列表
             if (document.querySelector('.model').style.display === 'flex') {
                 document.querySelector('.model').style.display = 'none';

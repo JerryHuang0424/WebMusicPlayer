@@ -30,5 +30,13 @@
         "album": "Love",
         "cover": "res/picture/5tuyB-sufsI9pCtbLcFMCA==_109951166302571359.jpg",
         "time": "03:58"
+    },
+    {
+        "name": "大东北我的家乡",
+        "andio_url": "../res/music/大东北我的家乡.mp3",
+        "singer": "Tia Ray",
+        "album": "大东北我的家乡",
+        "cover": "res/picture/1.png",
+        "time": "03:46"
     }
 ]
